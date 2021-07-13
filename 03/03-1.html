@@ -3,28 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="./03-1.js" ></script>
     <script>
-        var lists=[];
-        function todolist(){
-            var task =document.getElementById("task");
-            console.log("1");
-            console.log(task);
-            console.log("2");
-            if(task.value !== ''){
-                lists.push(task.value);
-            }
-            console.log(lists);
-            var commet =document.getElementById("comment");
-            commet.innerHTML = '';
-            var str = '<tr><th>ID</th><th>コメント</th><th>状態</th></tr>';
-            if(lists.length > 0){
-              lists.forEach(function(list,index){
-                  console.log(list,index);
-                str +=  '<tr><td>'+index+'</td><td>'+list+'</td><td><button>作業中</button></td><td><button>削除</button></td></tr>';
-              })
-             }
-             commet.innerHTML = str;
-        }
         window.onload = function(){
             var button = document.getElementById("btn");
             console.log(button);
