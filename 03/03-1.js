@@ -15,15 +15,16 @@ function todolist(){
     const task =document.getElementById("task");
     if(task.value !== ''){
         lists.push({'comment':task.value,'status':"作業中"});
-      }
-      view();
+    }
+    task.value="";
+    view();
 }
 let del= (button)=>{
   lists.splice(button.value,1);
   view();
 }
-//  3-3 次回
-// let status= (button)=>{
-//   lists[button.value].status=(lists[button.value].status)==="作業中"?"完了":"作業中";
-//       view();
-//   }
+
+let status= (button)=>{
+  lists[button.value].status=(lists[button.value].status)==="作業中"?"完了":"作業中";
+      view();
+  }
