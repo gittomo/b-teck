@@ -1,14 +1,14 @@
 const lists=[];
 function view(){
-  const commet =document.getElementById('comment');
-    commet.innerHTML = '';
+  const comment =document.getElementById('comment');
+  comment.innerHTML = '';
     let str = '<tr><th>ID</th><th>コメント</th><th>状態</th></tr>';
   if(lists.length > 0){
     lists.forEach((val, key) => {
 
         str +=  '<tr><td>'+key+'</td><td>'+val.comment+'</td><td><button value='+key+' onclick="status(this)">'+val.status +'</button ></td><td><button value='+key+' onclick="del(this)">削除</button></td></tr>';
     })
-  commet.innerHTML = str;
+    comment.innerHTML = str;
   }
 }
 function todolist(){
