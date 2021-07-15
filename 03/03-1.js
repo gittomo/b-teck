@@ -19,12 +19,12 @@ function todolist(){
     task.value="";
     view();
 }
-let del= (button)=>{
+const del= (button)=>{
   lists.splice(button.value,1);
   view();
 }
 
-let status= (button)=>{
+const status= (button)=>{
   lists[button.value].status=(lists[button.value].status)==="作業中"?"完了":"作業中";
       view();
   }
