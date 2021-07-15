@@ -3,13 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="./03-1.js" ></script>
-    <script>
-        window.onload = function(){
-            const button = document.getElementById("btn");
-            button.addEventListener('click',todolist,false);
-        }
-    </script>
 </head>
 <body>
 <h1>ToDoリスト</h1>
@@ -23,5 +16,14 @@
 <h2>新規タスク追加</h2>
     <input id ="task" type="text" name = "task">
     <input id ="btn" type="button" value="追加">
+
+    <script src="./03-1.js" ></script>
+    <script>
+      window.onload = function(){
+          const button = document.getElementById("btn");
+          button.addEventListener('click',todolist,false);
+          let input_checks = document.querySelectorAll('input[name=check]'); 
+      }
+  </script>
 </body>
 </html>
