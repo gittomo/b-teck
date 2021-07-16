@@ -22,7 +22,14 @@
       window.onload = function(){
           const button = document.getElementById("btn");
           button.addEventListener('click',todolist,false);
-          let input_checks = document.querySelectorAll('input[name=check]'); 
+          const input_checks = document.querySelectorAll('input[name=check]');
+          for(let element of input_checks){
+            element.addEventListener('change',function(){
+              if(this.checked){
+                view(this.value);
+              }
+            })
+          } 
       }
   </script>
 </body>
