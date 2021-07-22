@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <title>04</title>
+   <script src="./04.js" ></script>
+
+  </head>
+<body>
+  <h2 id="title"></h2>
+  <h4 id="genre"></h4>
+  <h4 id="difficulty"></h4>
+  <div id="box" style="border-top:solid 1px gray;border-bottom:solid 1px gray"><h4 id="content"></h4></div>
+  <h4 id="answer"></h4>
+  
+  <input  id ="btn" type="button" value="開始">
+  <script>
+    const title = document.getElementById('title');
+    const genre = document.getElementById('genre');
+    const content = document.getElementById('content');
+    const difficulty = document.getElementById('difficulty');
+    const btn = document.getElementById('btn');
+    const answer = document.getElementById('answer');
+
+      window.onload=()=> {      
+        title.innerHTML="ようこそ";
+        content.innerHTML="以下のボタンをクリック";
+        btn.addEventListener('click',get_text,false);
+     
+      }
+  </script>
+</body>
+</html>
