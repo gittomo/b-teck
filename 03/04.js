@@ -1,3 +1,17 @@
+const title = document.getElementById('title');
+const genre = document.getElementById('genre');
+const content = document.getElementById('content');
+const difficulty = document.getElementById('difficulty');
+const btn = document.getElementById('btn');
+const answer = document.getElementById('answer');
+
+  window.onload=()=> {      
+    title.innerHTML="ようこそ";
+    content.innerHTML="以下のボタンをクリック";
+    btn.addEventListener('click',get_text,false);
+ 
+  }
+
 class Quiz {
   constructor(quizData) {
     this._quizzes = quizData.results;
@@ -21,11 +35,11 @@ class Quiz {
   }
   
   arrayShuffle(array) {
-    for (var i = (array.length - 1); 0 < i; i--) {
+    for (let i = (array.length - 1); 0 < i; i--) {
       // 0〜(i+1)の範囲で値を取得
-      var r = Math.floor(Math.random() * (i + 1));
+      let r = Math.floor(Math.random() * (i + 1));
       // 要素の並び替えを実行
-      var tmp = array[i];
+      let tmp = array[i];
       array[i] = array[r];
       array[r] = tmp;
     }
@@ -36,13 +50,13 @@ class Quiz {
     genre.innerHTML = "【ジャンル】" + quiz.getQuizCategory(quiz._index);
     difficulty.innerHTML = "【難易度】" + quiz.getQuizDifficulty(quiz._index);
     content.innerHTML = quiz.getQuizQuestion(quiz._index);
-    let answers = [];
+    const answers = [];
     answer.innerHTML = '';
     answers.push(quiz.getQuizIncorrect_answers(quiz._index));
     answers[0].push(quiz.getQuizCorrect_answer(quiz._index));
     quiz.arrayShuffle(answers[0]);
     answers[0].forEach(function(val) {
-      let element_q = document.createElement('p');
+      const element_q = document.createElement('p');
       element_q.innerHTML = '<input id ="btn" name="quiz" type="button" value="' + val + '">';
       answer.appendChild(element_q);
     });
@@ -51,7 +65,7 @@ class Quiz {
   quiz_result(quiz) {
     title.innerHTML = "あなたの正答数は" + quiz._correctAnswersNum + "です！！";
     content.innerHTML = "再度チェレンジしたい場合は以下をクリック！";
-    let element_r = document.createElement('p');
+    const element_r = document.createElement('p');
     genre.innerHTML='';
     difficulty.innerHTML='';
     answer.innerHTML='';
