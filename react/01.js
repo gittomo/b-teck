@@ -5,9 +5,9 @@ class  TodoApp extends React.Component {
     this.state={
       todoList: [],
       value: "",
-      state:"作業中",
     }
   }
+
 
   onChange(e) {
     this.setState({value: e.target.value})
@@ -15,7 +15,7 @@ class  TodoApp extends React.Component {
 
   add() {
     let arr = this.state.todoList;
-    arr.push(this.state.value);
+    arr.push({'comment':this.state.value,'status':1});
 
     this.setState({
       todoList: arr,
@@ -24,9 +24,10 @@ class  TodoApp extends React.Component {
   }
   
   render() {
+    const checklist=['すべて','作業中','完了'];
     const todoList =
     this.state.todoList.map((todo, idx) => {
-      return <tr key={idx}><td>{idx}</td>{todo}<td><button>作業中</button></td><td><button> 削除 </button></td></tr>
+      return <tr key={idx}><td>{idx}</td>{todo.comment}<td><button>{checklist[todo.status]}</button></td><td><button> 削除 </button></td></tr>
     })
     return (
       <div>
