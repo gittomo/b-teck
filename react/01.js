@@ -22,12 +22,23 @@ class  TodoApp extends React.Component {
       value: '',
     })
   }
+   del(key){
+    let arr = this.state.todoList;
+     console.log(key);
+     arr.splice(key,1);
+      console.log(arr);
+    
+      this.setState({
+       todoList: arr,
+        value: '',
+       })
+   }
   
   render() {
     const checklist=['すべて','作業中','完了'];
     const todoList =
     this.state.todoList.map((todo, idx) => {
-      return <tr key={idx}><td>{idx}</td>{todo.comment}<td><button>{checklist[todo.status]}</button></td><td><button> 削除 </button></td></tr>
+      return <tr key={idx}><td>{idx}</td>{todo.comment}<td><button>{checklist[todo.status]}</button></td><td><button onClick={this.del({idx})}> 削除 </button></td></tr>
     })
     return (
       <div>
